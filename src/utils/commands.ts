@@ -7,7 +7,6 @@ const hostname = window.location.hostname;
 
 export const commands: Record<string, (args: string[]) => Promise<string> | string> = {
   help: () => 'Available commands: ' + Object.keys(commands).join(', '),
-  hostname: () => hostname,
   whoami: () => 'guest',
   date: () => new Date().toLocaleString(),
   vi: () => `why use vi? try 'emacs'`,
@@ -114,13 +113,14 @@ export const commands: Record<string, (args: string[]) => Promise<string> | stri
     }
   },
   banner: () => `
-███╗   ███╗██╗  ██╗████████╗████████╗███████╗██████╗
-████╗ ████║██║  ██║╚══██╔══╝╚══██╔══╝╚════██║╚════██╗
-██╔████╔██║███████║   ██║      ██║       ██╔╝ █████╔╝
-██║╚██╔╝██║╚════██║   ██║      ██║      ██╔╝ ██╔═══╝
-██║ ╚═╝ ██║     ██║   ██║      ██║      ██║  ███████╗
-╚═╝     ╚═╝     ╚═╝   ╚═╝      ╚═╝      ╚═╝  ╚══════╝ v${packageJson.version}
-
+  ███╗   ███╗ ██╗   ██╗     ██╗  ██╗    ██████╗  ██╗ ██████╗  ████████╗  ██████╗ 
+  ████╗ ████║ ██║   ██║     ██║  ██║    ██╔══██╗ ██║ ██╔══██╗ ╚══██╔══╝ ██╔═══██╗
+  ██╔████╔██║ ██║   ██║     ██║  ██║    ██║  ██║ ██║ ██████╔╝    ██║    ██║   ██║
+  ██║╚██╔╝██║ ██║   ██║ ██   ██║ ██║    ██║  ██║ ██║ ██╔═══╝     ██║    ██║   ██║
+  ██║ ╚═╝ ██║ ╚██████╔╝ ╚█████╔╝ ██║    ██████╔╝ ██║ ██║         ██║    ╚██████╔╝
+  ╚═╝     ╚═╝  ╚═════╝   ╚════╝  ╚═╝    ╚═════╝  ╚═╝ ╚═╝         ╚═╝     ╚═════╝ 
+                                                                          
+Welcome to my portfolio! ʕっ•ᴥ•ʔっ
 Type 'help' to see list of available commands.
 `,
 };
